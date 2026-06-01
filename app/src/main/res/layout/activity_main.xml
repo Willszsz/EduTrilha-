@@ -10,18 +10,60 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:paddingHorizontal="20dp"
-        android:paddingTop="24dp"
-        android:paddingBottom="24dp">
+        android:paddingHorizontal="24dp"
+        android:paddingVertical="20dp">
 
-        <!-- Card de Resumo -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="EduTrilha"
+                    android:textColor="@color/primary"
+                    android:textSize="30sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:text="Sua jornada de aprendizagem personalizada"
+                    android:textColor="@color/muted"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btnLogout"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:text="Sair"
+                android:textAllCaps="false"
+                android:textColor="@android:color/white"
+                android:textSize="13sp" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="12dp" />
+
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/bg_card"
             android:orientation="vertical"
-            android:padding="20dp"
-            android:elevation="4dp">
+            android:padding="20dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -30,19 +72,20 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:layout_width="48dp"
-                    android:layout_height="48dp"
+                    android:id="@+id/tvAvatar"
+                    android:layout_width="56dp"
+                    android:layout_height="56dp"
                     android:background="@drawable/bg_avatar"
                     android:gravity="center"
-                    android:text="JS"
-                    android:textColor="@android:color/white"
-                    android:textSize="16sp"
-                    android:textStyle="bold"/>
+                    android:text="U"
+                    android:textColor="#FFFFFF"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
 
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="12dp"
+                    android:layout_marginStart="14dp"
                     android:layout_weight="1"
                     android:orientation="vertical">
 
@@ -51,53 +94,42 @@
                         android:layout_height="wrap_content"
                         android:text="Olá, estudante"
                         android:textColor="@color/muted"
-                        android:textSize="12sp"/>
+                        android:textSize="12sp" />
 
                     <TextView
+                        android:id="@+id/tvNomeUsuario"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="João Silva"
+                        android:text="Usuário"
                         android:textColor="@color/textPrimary"
-                        android:textSize="16sp"
-                        android:textStyle="bold"/>
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
                 </LinearLayout>
 
-                <LinearLayout
+                <TextView
+                    android:id="@+id/tvStatusDesempenho"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@drawable/bg_badge_success"
-                    android:gravity="center_vertical"
-                    android:orientation="horizontal"
-                    android:paddingHorizontal="10dp"
-                    android:paddingVertical="6dp">
-
-                    <ImageView
-                        android:layout_width="12dp"
-                        android:layout_height="12dp"
-                        android:src="@drawable/ic_trend_up"
-                        app:tint="@color/success"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="4dp"
-                        android:text="Bom desempenho"
-                        android:textColor="@color/success"
-                        android:textSize="11sp"
-                        android:textStyle="bold"/>
-                </LinearLayout>
+                    android:paddingStart="10dp"
+                    android:paddingTop="5dp"
+                    android:paddingEnd="10dp"
+                    android:paddingBottom="5dp"
+                    android:text="Bom desempenho"
+                    android:textSize="11sp"
+                    android:textStyle="bold" />
             </LinearLayout>
 
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:layout_marginTop="16dp"
-                android:background="@color/divider"/>
+                android:layout_marginBottom="16dp"
+                android:background="@color/divider" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
                 android:orientation="horizontal">
 
                 <LinearLayout
@@ -111,16 +143,16 @@
                         android:layout_height="wrap_content"
                         android:text="Média Geral"
                         android:textColor="@color/muted"
-                        android:textSize="12sp"/>
+                        android:textSize="12sp" />
 
                     <TextView
+                        android:id="@+id/tvMedia"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="2dp"
                         android:text="7,5"
                         android:textColor="@color/primary"
-                        android:textSize="28sp"
-                        android:textStyle="bold"/>
+                        android:textSize="32sp"
+                        android:textStyle="bold" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -134,80 +166,218 @@
                         android:layout_height="wrap_content"
                         android:text="Disciplinas"
                         android:textColor="@color/muted"
-                        android:textSize="12sp"/>
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/tvQtdDisciplinasHeader"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0"
+                        android:textColor="@color/textPrimary"
+                        android:textSize="32sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Estatísticas"
+                android:textColor="@color/textPrimary"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="110dp"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="6dp"
+                    android:background="@drawable/bg_card"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="12dp">
+
+                    <ImageView
+                        android:layout_width="28dp"
+                        android:layout_height="28dp"
+                        android:src="@drawable/ic_book"
+                        app:tint="@color/primary" />
+
+                    <TextView
+                        android:id="@+id/tvTotalDisciplinas"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="0"
+                        android:textColor="@color/textPrimary"
+                        android:textSize="22sp"
+                        android:textStyle="bold" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="2dp"
-                        android:text="5"
-                        android:textColor="@color/textPrimary"
-                        android:textSize="28sp"
-                        android:textStyle="bold"/>
+                        android:text="Disciplinas"
+                        android:textColor="@color/muted"
+                        android:textSize="11sp" />
+
                 </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="110dp"
+                    android:layout_weight="1"
+                    android:layout_marginHorizontal="3dp"
+                    android:background="@drawable/bg_card"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="12dp">
+
+                    <ImageView
+                        android:layout_width="28dp"
+                        android:layout_height="28dp"
+                        android:src="@drawable/ic_check"
+                        android:tint="@color/success" />
+
+                    <TextView
+                        android:id="@+id/tvTotalConcluidos"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="0"
+                        android:textColor="@color/textPrimary"
+                        android:textSize="22sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Concluídos"
+                        android:textColor="@color/muted"
+                        android:textSize="11sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="110dp"
+                    android:layout_weight="1"
+                    android:layout_marginStart="6dp"
+                    android:background="@drawable/bg_card"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="12dp">
+
+                    <ImageView
+                        android:layout_width="28dp"
+                        android:layout_height="28dp"
+                        android:src="@drawable/ic_chart"
+                        android:tint="@color/warning" />
+
+                    <TextView
+                        android:id="@+id/tvProgressoGeral"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="0%"
+                        android:textColor="@color/textPrimary"
+                        android:textSize="22sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Progresso"
+                        android:textColor="@color/muted"
+                        android:textSize="11sp" />
+
+                </LinearLayout>
+
             </LinearLayout>
-        </LinearLayout>
-
-        <!-- Seção Disciplinas -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:gravity="center_vertical"
-            android:orientation="horizontal">
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Minhas Disciplinas"
-                android:textColor="@color/textPrimary"
-                android:textSize="16sp"
-                android:textStyle="bold"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Ver todas"
-                android:textColor="@color/muted"
-                android:textSize="12sp"/>
+                android:layout_marginTop="16dp"
+                android:text="Recomendação Inteligente"
+                android:textColor="@color/textPrimary"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvRecomendacao"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/bg_card"
+                android:padding="16dp"
+                android:textColor="@color/textPrimary" />
+
         </LinearLayout>
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="12dp"
+            android:text="Minhas Disciplinas"
+            android:textColor="@color/textPrimary"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
         <LinearLayout
-            android:id="@+id/containerDisciplinas"
+            android:id="@+id/listaDisciplinas"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:orientation="vertical"/>
+            android:orientation="vertical" />
 
-        <!-- Botão -->
-        <LinearLayout
-            android:id="@+id/btnGerarTrilha"
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnCadastrarDisciplina"
             android:layout_width="match_parent"
             android:layout_height="56dp"
+            android:layout_marginTop="20dp"
+            android:text="Nova Disciplina"
+            android:textColor="#FFFFFF"
+            android:textAllCaps="false"
+            android:backgroundTint="@color/primary"
+            app:icon="@drawable/ic_add"
+            app:iconTint="@android:color/white"
+            app:iconPadding="10dp"
+            app:iconGravity="textStart"/>
+
+        <Button
+            android:id="@+id/btnGerar"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
             android:layout_marginTop="24dp"
+            android:layout_marginBottom="8dp"
             android:background="@drawable/bg_button_primary"
             android:clickable="true"
+            android:elevation="4dp"
             android:focusable="true"
             android:gravity="center"
-            android:orientation="horizontal"
-            android:elevation="6dp">
-
-            <ImageView
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:src="@drawable/ic_sparkles"
-                app:tint="@android:color/white"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:text="Gerar Trilha de Aprendizagem"
-                android:textColor="@android:color/white"
-                android:textSize="15sp"
-                android:textStyle="bold"/>
-        </LinearLayout>
+            android:text="✦ Gerar Trilha de Aprendizagem"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:minHeight="0dp"
+            android:minWidth="0dp"
+            android:padding="0dp" />
 
     </LinearLayout>
+
 </ScrollView>
